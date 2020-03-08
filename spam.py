@@ -1,15 +1,12 @@
-import click
 import smtplib as root
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-@click.command()
-@click.argument('target',type=str)
-def send_email(target):
+def send_email():
 	login = 'denisdebil56@mail.ru'
 	password = 'awsedrft123'
 	url = 'smtp.mail.ru'
 	topic = 'спам'
-	toaddr = target
+	toaddr = input('email жертвы:')
 	message = 'вы были за спамлены'
 	msg = MIMEMultipart()
 	msg[ 'subject' ] = topic
